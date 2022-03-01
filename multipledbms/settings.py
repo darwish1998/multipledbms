@@ -69,7 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'multipledbms.wsgi.application'
 
-
+import os
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -80,7 +80,14 @@ DATABASES = {
     'auth_db':{
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    'school_db': {
+        'NAME': 'school',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': os.environ.get('PASSWORD'),
+        'PORT': 3305
+    },
 }
 
 
