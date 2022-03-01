@@ -75,6 +75,9 @@ WSGI_APPLICATION = 'multipledbms.wsgi.application'
 
 DATABASES = {
     'default': {
+        
+    },
+    'auth_db':{
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -116,6 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+DATABASE_ROUTERS = ['routers.routers_db.AuthRouter']
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
