@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'school.apps.SchoolConfig',
+    'club.apps.ClubConfig',
+
+
 ]
 
 MIDDLEWARE = [
@@ -87,7 +90,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'USER': 'root',
         'PASSWORD': os.environ.get('PASSWORD'),
-        'PORT': 3305
+        'PORT': 3306
+    },
+     'club_db': {
+        'NAME': 'club',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'postgres',
+        'PASSWORD': os.environ.get('PASSWORD'),
+        'PORT': 5432
     },
 }
 
@@ -129,7 +139,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DATABASE_ROUTERS = ['routers.routers_db.AuthRouter',
-                    'routers.routers_db.SchoolRouter'
+                    'routers.routers_db.SchoolRouter',
+                    'routers.routers_db.ClubRouter'
 
 
                     ]
