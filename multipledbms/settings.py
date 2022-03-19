@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'school.apps.SchoolConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-DATABASE_ROUTERS = ['routers.routers_db.AuthRouter']
+DATABASE_ROUTERS = ['routers.routers_db.AuthRouter',
+                    'routers.routers_db.SchoolRouter'
+
+
+                    ]
 
 
 # Default primary key field type
